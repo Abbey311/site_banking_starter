@@ -3,6 +3,10 @@ const Bank = require("../models/bank")
 const { NotFoundError } = require("../utils/errors")
 const router = express.Router()
 
+router.get("/test", async (req, res, next) => {
+  res.json({ping:"pong"})
+})
+
 // list all transactions
 router.get("/transactions", async (req, res, next) => {
   try {

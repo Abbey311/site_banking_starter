@@ -18,6 +18,8 @@ app.use((req, res, next) => {
 
 /* Generic error handler - anything that is unhandled will be handled here */
 app.use((error, req, res, next) => {
+  console.log('unique');
+  
   const status = error.status || 500
   const message = error.message
 
@@ -26,7 +28,7 @@ app.use((error, req, res, next) => {
   })
 })
 
-const PORT = 3001
+const PORT = 8082
 
 app.listen(PORT, () => {
   console.log(`🚀 Server listening on http://localhost:${PORT}`)
